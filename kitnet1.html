@@ -27,6 +27,8 @@
         header a {
             color: white;
             text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
         }
 
         .container {
@@ -96,10 +98,15 @@
             border-radius: 7px;
             font-weight: bold;
             color: white;
+            transition: 0.3s;
         }
 
         .whatsapp {
             background: #25D366;
+        }
+
+        .whatsapp:hover {
+            background: #1ebe5d;
         }
 
         .email {
@@ -117,6 +124,10 @@
         }
 
         @media(max-width:700px) {
+            .container {
+                margin: 20px;
+            }
+
             .main-image {
                 height: 300px;
             }
@@ -169,15 +180,16 @@
 
             <a
                 class="button whatsapp"
-                href="https://wa.me/353000000000"
-                target="_blank">
-                WhatsApp
+                href="https://wa.me/353833100451?text=Hello%2C%20I%20am%20interested%20in%20the%20Modern%20Studio."
+                target="_blank"
+                rel="noopener">
+                💬 Contact on WhatsApp
             </a>
 
             <a
                 class="button email"
                 href="mailto:owner@example.com">
-                Email Owner
+                ✉️ Email Owner
             </a>
 
             <a
