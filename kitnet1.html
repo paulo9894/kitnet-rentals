@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Studio | Kitnet Rentals</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7f9;
+            color: #243b53;
+        }
+
+        header {
+            background: #102a43;
+            color: white;
+            padding: 20px 8%;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .main-image {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 35px;
+        }
+
+        h1 {
+            color: #102a43;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            color: #00a896;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        .features span {
+            background: #edf2f7;
+            padding: 10px 15px;
+            border-radius: 7px;
+        }
+
+        .description {
+            line-height: 1.7;
+            color: #52606d;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 7px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .email {
+            background: #0077b6;
+        }
+
+        .back {
+            background: #102a43;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+        }
+
+        @media(max-width:700px) {
+            .main-image {
+                height: 300px;
+            }
+
+            .content {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html">🏠 Kitnet Rentals</a>
+</header>
+
+<div class="container">
+
+    <img
+        class="main-image"
+        src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=85"
+        alt="Modern Studio"
+    >
+
+    <div class="content">
+
+        <h1>Modern Studio</h1>
+
+        <p class="location">📍 City Centre</p>
+
+        <p class="price">€650 / month</p>
+
+        <div class="features">
+            <span>🛏 1 Bedroom</span>
+            <span>🚿 1 Bathroom</span>
+            <span>🍳 Kitchen</span>
+            <span>📶 Wi-Fi</span>
+            <span>🪑 Furnished</span>
+        </div>
+
+        <p class="description">
+            This modern studio offers a comfortable living space with
+            a private bathroom, equipped kitchen and furnished bedroom.
+            It is ideal for one person or a couple looking for a practical
+            and comfortable home.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="button whatsapp"
+                href="https://wa.me/353000000000"
+                target="_blank">
+                WhatsApp
+            </a>
+
+            <a
+                class="button email"
+                href="mailto:owner@example.com">
+                Email Owner
+            </a>
+
+            <a
+                class="button back"
+                href="index.html">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Kitnet Rentals
+</footer>
+
+</body>
+</html>
