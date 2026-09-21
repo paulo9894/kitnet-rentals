@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Studio | Kitnet Rentals</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7f9;
+            color: #243b53;
+        }
+
+        header {
+            background: #102a43;
+            padding: 20px 8%;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .gallery {
+            position: relative;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.55);
+            color: white;
+            border: none;
+            font-size: 35px;
+            padding: 12px 17px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .previous {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .photo-number {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background: rgba(0,0,0,0.65);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 8px;
+            padding: 12px;
+            background: #eef2f5;
+            overflow-x: auto;
+        }
+
+        .thumbnails img {
+            width: 120px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            opacity: 0.65;
+        }
+
+        .thumbnails img.active {
+            opacity: 1;
+            outline: 3px solid #00a896;
+        }
+
+        .content {
+            padding: 35px;
+        }
+
+        h1 {
+            color: #102a43;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            color: #00a896;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .features span {
+            background: #edf2f7;
+            padding: 10px 15px;
+            border-radius: 7px;
+        }
+
+        .description {
+            line-height: 1.7;
+            color: #52606d;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            color: white;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .email {
+            background: #0077b6;
+        }
+
+        .back {
+            background: #102a43;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+        }
+
+        @media(max-width:700px) {
+            .container {
+                margin: 15px;
+            }
+
+            .main-image {
+                height: 300px;
+            }
+
+            .content {
+                padding: 22px;
+            }
+
+            .thumbnails img {
+                width: 90px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html">🏠 Kitnet Rentals</a>
+</header>
+
+<div class="container">
+
+    <div class="gallery">
+
+        <img
+            id="mainImage"
+            class="main-image"
+            src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1400&q=85"
+            alt="Premium Studio"
+        >
+
+        <button class="arrow previous" onclick="previousImage()">❮</button>
+        <button class="arrow next" onclick="nextImage()">❯</button>
+
+        <div class="photo-number" id="photoNumber">
+            1 / 5
+        </div>
+
+    </div>
+
+    <div class="thumbnails">
+
+        <img
+            src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=500&q=80"
+            onclick="selectImage(0)"
+            class="active">
+
+        <img
+            src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80"
+            onclick="selectImage(1)">
+
+        <img
+            src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=500&q=80"
+            onclick="selectImage(2)">
+
+        <img
+            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=500&q=80"
+            onclick="selectImage(3)">
+
+        <img
+            src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=500&q=80"
+            onclick="selectImage(4)">
+
+    </div>
+
+    <div class="content">
+
+        <h1>Premium Studio</h1>
+
+        <p class="location">📍 Central Area</p>
+
+        <p class="price">€720 / month</p>
+
+        <div class="features">
+            <span>🛏 1 Bedroom</span>
+            <span>🚿 1 Bathroom</span>
+            <span>🍳 Kitchen</span>
+            <span>📶 Wi-Fi</span>
+            <span>🪑 Furnished</span>
+            <span>🚗 Parking</span>
+        </div>
+
+        <p class="description">
+            A modern and comfortable studio with a furnished bedroom,
+            equipped kitchen and private bathroom. Ideal for someone
+            looking for comfort, privacy and a convenient location.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="button whatsapp"
+                href="https://wa.me/353833100451?text=Hello%2C%20I%20am%20interested%20in%20the%20Premium%20Studio."
+                target="_blank">
+                💬 Contact on WhatsApp
+            </a>
+
+            <a
+                class="button email"
+                href="mailto:owner@example.com">
+                ✉️ Email Owner
+            </a>
+
+            <a
+                class="button back"
+                href="index.html">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Kitnet Rentals
+</footer>
+
+<script>
+
+    const images = [
+        "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1400&q=85"
+    ];
+
+    let currentImage = 0;
+
+    function showImage() {
+
+        document.getElementById("mainImage").src = images[currentImage];
+
+        document.getElementById("photoNumber").innerText =
+            (currentImage + 1) + " / " + images.length;
+
+        const thumbnails = document.querySelectorAll(".thumbnails img");
+
+        thumbnails.forEach(function(photo) {
+            photo.classList.remove("active");
+        });
+
+        thumbnails[currentImage].classList.add("active");
+    }
+
+    function nextImage() {
+
+        currentImage++;
+
+        if (currentImage >= images.length) {
+            currentImage = 0;
+        }
+
+        showImage();
+    }
+
+    function previousImage() {
+
+        currentImage--;
+
+        if (currentImage < 0) {
+            currentImage = images.length - 1;
+        }
+
+        showImage();
+    }
+
+    function selectImage(number) {
+
+        currentImage = number;
+        showImage();
+    }
+
+</script>
+
+</body>
+</html>
