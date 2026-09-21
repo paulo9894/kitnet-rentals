@@ -20,7 +20,6 @@
 
         header {
             background: #102a43;
-            color: white;
             padding: 20px 8%;
         }
 
@@ -40,11 +39,84 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
+        /* PHOTO GALLERY */
+
+        .gallery {
+            position: relative;
+        }
+
         .main-image {
             width: 100%;
-            height: 480px;
+            height: 500px;
             object-fit: cover;
+            display: block;
         }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.55);
+            color: white;
+            border: none;
+            font-size: 35px;
+            padding: 12px 17px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .arrow:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .previous {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .photo-number {
+            position: absolute;
+            bottom: 18px;
+            right: 20px;
+            background: rgba(0,0,0,0.65);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+        }
+
+        /* THUMBNAILS */
+
+        .thumbnails {
+            display: flex;
+            gap: 8px;
+            padding: 12px;
+            background: #eef2f5;
+            overflow-x: auto;
+        }
+
+        .thumbnails img {
+            width: 120px;
+            height: 75px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 6px;
+            opacity: 0.65;
+            transition: 0.2s;
+        }
+
+        .thumbnails img:hover {
+            opacity: 1;
+        }
+
+        .thumbnails img.active {
+            opacity: 1;
+            outline: 3px solid #00a896;
+        }
+
+        /* PROPERTY INFORMATION */
 
         .content {
             padding: 35px;
@@ -98,15 +170,10 @@
             border-radius: 7px;
             font-weight: bold;
             color: white;
-            transition: 0.3s;
         }
 
         .whatsapp {
             background: #25D366;
-        }
-
-        .whatsapp:hover {
-            background: #1ebe5d;
         }
 
         .email {
@@ -124,8 +191,9 @@
         }
 
         @media(max-width:700px) {
+
             .container {
-                margin: 20px;
+                margin: 15px;
             }
 
             .main-image {
@@ -134,6 +202,15 @@
 
             .content {
                 padding: 22px;
+            }
+
+            .arrow {
+                font-size: 25px;
+            }
+
+            .thumbnails img {
+                width: 90px;
+                height: 60px;
             }
         }
     </style>
@@ -145,57 +222,134 @@
     <a href="index.html">🏠 Kitnet Rentals</a>
 </header>
 
+
 <div class="container">
 
-    <img
-        class="main-image"
-        src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=85"
-        alt="Modern Studio"
-    >
+    <!-- GALLERY -->
+
+    <div class="gallery">
+
+        <img
+            id="mainImage"
+            class="main-image"
+            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=85"
+            alt="Property photo"
+        >
+
+        <button class="arrow previous" onclick="previousImage()">
+            ❮
+        </button>
+
+        <button class="arrow next" onclick="nextImage()">
+            ❯
+        </button>
+
+        <div class="photo-number" id="photoNumber">
+            1 / 5
+        </div>
+
+    </div>
+
+
+    <!-- SMALL PHOTOS -->
+
+    <div class="thumbnails">
+
+        <img
+            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=500&q=80"
+            onclick="selectImage(0)"
+            class="active"
+        >
+
+        <img
+            src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80"
+            onclick="selectImage(1)"
+        >
+
+        <img
+            src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80"
+            onclick="selectImage(2)"
+        >
+
+        <img
+            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=500&q=80"
+            onclick="selectImage(3)"
+        >
+
+        <img
+            src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=500&q=80"
+            onclick="selectImage(4)"
+        >
+
+    </div>
+
+
+    <!-- PROPERTY DETAILS -->
 
     <div class="content">
 
         <h1>Modern Studio</h1>
 
-        <p class="location">📍 City Centre</p>
+        <p class="location">
+            📍 City Centre
+        </p>
 
-        <p class="price">€650 / month</p>
+        <p class="price">
+            €650 / month
+        </p>
 
         <div class="features">
+
             <span>🛏 1 Bedroom</span>
+
             <span>🚿 1 Bathroom</span>
+
             <span>🍳 Kitchen</span>
+
             <span>📶 Wi-Fi</span>
+
             <span>🪑 Furnished</span>
+
         </div>
 
         <p class="description">
+
             This modern studio offers a comfortable living space with
             a private bathroom, equipped kitchen and furnished bedroom.
+
             It is ideal for one person or a couple looking for a practical
             and comfortable home.
+
         </p>
+
 
         <div class="buttons">
 
             <a
                 class="button whatsapp"
                 href="https://wa.me/353833100451?text=Hello%2C%20I%20am%20interested%20in%20the%20Modern%20Studio."
-                target="_blank"
-                rel="noopener">
+                target="_blank">
+
                 💬 Contact on WhatsApp
+
             </a>
+
 
             <a
                 class="button email"
                 href="mailto:owner@example.com">
+
                 ✉️ Email Owner
+
             </a>
+
 
             <a
                 class="button back"
                 href="index.html">
+
                 ← Back to Home
+
             </a>
 
         </div>
@@ -204,9 +358,84 @@
 
 </div>
 
+
 <footer>
     © 2026 Kitnet Rentals
 </footer>
+
+
+<script>
+
+    const images = [
+
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=85",
+
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85",
+
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=85",
+
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85",
+
+        "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1400&q=85"
+
+    ];
+
+    let currentImage = 0;
+
+
+    function showImage() {
+
+        document.getElementById("mainImage").src =
+            images[currentImage];
+
+        document.getElementById("photoNumber").innerText =
+            (currentImage + 1) + " / " + images.length;
+
+
+        const thumbnails =
+            document.querySelectorAll(".thumbnails img");
+
+        thumbnails.forEach(function(photo) {
+            photo.classList.remove("active");
+        });
+
+        thumbnails[currentImage].classList.add("active");
+    }
+
+
+    function nextImage() {
+
+        currentImage++;
+
+        if (currentImage >= images.length) {
+            currentImage = 0;
+        }
+
+        showImage();
+    }
+
+
+    function previousImage() {
+
+        currentImage--;
+
+        if (currentImage < 0) {
+            currentImage = images.length - 1;
+        }
+
+        showImage();
+    }
+
+
+    function selectImage(number) {
+
+        currentImage = number;
+
+        showImage();
+    }
+
+</script>
+
 
 </body>
 </html>
