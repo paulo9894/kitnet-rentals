@@ -2,23 +2,406 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitnet Rentals</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #1f2937;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #102a43;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #4fd1c5;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 430px;
+            background:
+                linear-gradient(rgba(10, 35, 55, 0.70), rgba(10, 35, 55, 0.70)),
+                url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 650px;
+            line-height: 1.6;
+        }
+
+        .hero-button {
+            margin-top: 25px;
+            background-color: #00a896;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero-button:hover {
+            background-color: #028b7c;
+        }
+
+        /* PROPERTIES */
+        .properties {
+            padding: 70px 8%;
+        }
+
+        .properties-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .properties-title h2 {
+            font-size: 34px;
+            color: #102a43;
+            margin-bottom: 10px;
+        }
+
+        .properties-title p {
+            color: #66788a;
+        }
+
+        .property-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+        }
+
+        /* PROPERTY CARD */
+        .property-card {
+            background-color: white;
+            border-radius: 14px;
+            overflow: hidden;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+            transition: 0.3s;
+        }
+
+        .property-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.16);
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .property-information {
+            padding: 25px;
+        }
+
+        .property-information h3 {
+            color: #102a43;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #00a896;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #566573;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .features span {
+            background-color: #edf2f7;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .details-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #102a43;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .details-button:hover {
+            background-color: #00a896;
+        }
+
+        /* ABOUT */
+        .about {
+            background-color: #102a43;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .about h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+            color: #d9e2ec;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #071923;
+            color: #b8c4ce;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .property-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Kitnet Rentals</h1>
-    <p>Find a place to rent.</p>
+    <!-- HEADER -->
+    <header>
 
-    <h2>Kitnet 1</h2>
-    <img src="https://placehold.co/400x250?text=Kitnet+1" alt="Kitnet 1">
-    <p>Comfortable kitnet available for rent.</p>
-    <a href="kitnet1.html">View details</a>
+        <h1>🏠 Kitnet Rentals</h1>
 
-    <h2>Kitnet 2</h2>
-    <img src="https://placehold.co/400x250?text=Kitnet+2" alt="Kitnet 2">
-    <p>Modern kitnet available for rent.</p>
-    <a href="kitnet2.html">View details</a>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#properties">Properties</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <h2>Find Your Next Home</h2>
+
+        <p>
+            Comfortable, modern and affordable kitnets available for rent.
+            Discover the perfect place for you.
+        </p>
+
+        <a class="hero-button" href="#properties">
+            View Properties
+        </a>
+
+    </section>
+
+
+    <!-- PROPERTIES -->
+    <section class="properties" id="properties">
+
+        <div class="properties-title">
+
+            <h2>Available Properties</h2>
+
+            <p>
+                Explore our selected kitnets currently available for rent.
+            </p>
+
+        </div>
+
+
+        <div class="property-container">
+
+
+            <!-- KITNET 1 -->
+            <div class="property-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=85"
+                    alt="Modern kitnet interior"
+                >
+
+                <div class="property-information">
+
+                    <h3>Modern Studio</h3>
+
+                    <p class="location">
+                        📍 City Centre
+                    </p>
+
+                    <p class="price">
+                        €650 / month
+                    </p>
+
+                    <p class="description">
+                        A comfortable modern studio with a bright living area,
+                        private bathroom and equipped kitchen.
+                    </p>
+
+                    <div class="features">
+                        <span>🛏 1 Bedroom</span>
+                        <span>🚿 1 Bathroom</span>
+                        <span>📶 Wi-Fi</span>
+                    </div>
+
+                    <a class="details-button" href="kitnet1.html">
+                        View Details →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- KITNET 2 -->
+            <div class="property-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=85"
+                    alt="Comfortable kitnet interior"
+                >
+
+                <div class="property-information">
+
+                    <h3>Comfort Studio</h3>
+
+                    <p class="location">
+                        📍 Residential Area
+                    </p>
+
+                    <p class="price">
+                        €590 / month
+                    </p>
+
+                    <p class="description">
+                        A cosy furnished studio ideal for one person or a couple,
+                        with kitchen, bathroom and comfortable living space.
+                    </p>
+
+                    <div class="features">
+                        <span>🛏 1 Bedroom</span>
+                        <span>🚿 1 Bathroom</span>
+                        <span>🪑 Furnished</span>
+                    </div>
+
+                    <a class="details-button" href="kitnet2.html">
+                        View Details →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2>Simple. Safe. Comfortable.</h2>
+
+        <p>
+            Kitnet Rentals helps tenants find comfortable properties quickly.
+            View property information, prices and photos and contact the owner
+            directly for more information.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Kitnet Rentals | Property Rental Website
+        </p>
+
+    </footer>
 
 </body>
 </html>
