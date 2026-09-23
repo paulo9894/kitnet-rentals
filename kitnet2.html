@@ -165,6 +165,48 @@
         .email { background: #0077b6; }
         .back { background: #102a43; }
 
+        /* PROPERTY MAP */
+        .map-section {
+            margin-top: 35px;
+            padding-top: 30px;
+            border-top: 1px solid #d9e2ec;
+        }
+
+        .map-section h2 {
+            color: #102a43;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .map-section p {
+            color: #52606d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 360px;
+            border: 0;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 15px;
+            background: #00a896;
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .map-link:hover {
+            background: #028b7c;
+        }
+
         footer {
             text-align: center;
             padding: 25px;
@@ -217,7 +259,7 @@
     <div class="content">
         <h1>Comfort Studio</h1>
 
-        <p class="location">📍 Residential Area</p>
+        <p class="location">📍 Jijoca de Jericoacoara, Ceará</p>
 
         <p class="price">€590 / month</p>
 
@@ -251,6 +293,34 @@
                 ← Back to Home
             </a>
         </div>
+
+        <section class="map-section" aria-labelledby="property-location-title">
+            <h2 id="property-location-title">📍 Property Location</h2>
+
+            <p>
+                This pin shows the exact location of the studio in
+                Jijoca de Jericoacoara, Ceará. You can zoom, move around the map
+                and open the location in Google Maps for directions and street details.
+            </p>
+
+            <iframe
+                class="map-frame"
+                src="https://www.google.com/maps?q=-2.9163611,-40.4508333&z=17&output=embed"
+                title="Map showing the exact property location in Jijoca de Jericoacoara"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+
+            <a
+                class="map-link"
+                href="https://www.google.com/maps?q=-2.9163611,-40.4508333"
+                target="_blank"
+                rel="noopener noreferrer">
+                🗺️ Open in Google Maps
+            </a>
+        </section>
+
     </div>
 
 </div>
