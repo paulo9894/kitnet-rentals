@@ -251,42 +251,29 @@
         <img
             id="mainImage"
             class="main-image"
-            src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1400&q=85"
-            alt="Premium Studio"
+            src="images/modern-studio-1.jpg"
+            alt="Premium Studio property exterior"
         >
 
         <button class="arrow previous" onclick="previousImage()">❮</button>
         <button class="arrow next" onclick="nextImage()">❯</button>
 
-        <div class="photo-number" id="photoNumber">
-            1 / 5
-        </div>
+        <div class="photo-number" id="photoNumber">1 / 2</div>
 
     </div>
 
     <div class="thumbnails">
-
         <img
-            src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=500&q=80"
+            src="images/modern-studio-1.jpg"
             onclick="selectImage(0)"
-            class="active">
-
+            class="active"
+            alt="Premium Studio exterior view 1"
+        >
         <img
-            src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80"
-            onclick="selectImage(1)">
-
-        <img
-            src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=500&q=80"
-            onclick="selectImage(2)">
-
-        <img
-            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=500&q=80"
-            onclick="selectImage(3)">
-
-        <img
-            src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=500&q=80"
-            onclick="selectImage(4)">
-
+            src="images/modern-studio-2.jpg"
+            onclick="selectImage(1)"
+            alt="Premium Studio exterior view 2"
+        >
     </div>
 
     <div class="content">
@@ -374,11 +361,8 @@
 <script>
 
     const images = [
-        "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1400&q=85"
+        "images/modern-studio-1.jpg",
+        "images/modern-studio-2.jpg"
     ];
 
     let currentImage = 0;
