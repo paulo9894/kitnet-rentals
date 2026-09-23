@@ -274,8 +274,8 @@
         <img
             id="mainImage"
             class="main-image"
-            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=85"
-            alt="Property photo"
+            src="images/modern-studio-1.jpg"
+            alt="Modern Studio property exterior"
         >
 
         <button class="arrow previous" onclick="previousImage()">
@@ -287,7 +287,7 @@
         </button>
 
         <div class="photo-number" id="photoNumber">
-            1 / 5
+            1 / 2
         </div>
 
     </div>
@@ -298,29 +298,16 @@
     <div class="thumbnails">
 
         <img
-            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=500&q=80"
+            src="images/modern-studio-1.jpg"
             onclick="selectImage(0)"
             class="active"
+            alt="Modern Studio exterior view 1"
         >
 
         <img
-            src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80"
+            src="images/modern-studio-2.jpg"
             onclick="selectImage(1)"
-        >
-
-        <img
-            src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80"
-            onclick="selectImage(2)"
-        >
-
-        <img
-            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=500&q=80"
-            onclick="selectImage(3)"
-        >
-
-        <img
-            src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=500&q=80"
-            onclick="selectImage(4)"
+            alt="Modern Studio exterior view 2"
         >
 
     </div>
@@ -332,7 +319,7 @@
 
         <h1>Modern Studio</h1>
 
-        <p class="location">📍 Jijoca de Jericoacoara, Ceará</p>
+        <p class="location">📍 Jijoca de Jericoacoara, Ceará — 2°54'58.9"S, 40°27'03.0"W</p>
 
         <p class="price">
             €650 / month
@@ -435,17 +422,8 @@
 <script>
 
     const images = [
-
-        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=85",
-
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85",
-
-        "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=85",
-
-        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=85",
-
-        "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1400&q=85"
-
+        "images/modern-studio-1.jpg",
+        "images/modern-studio-2.jpg"
     ];
 
     let currentImage = 0;
