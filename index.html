@@ -57,10 +57,19 @@
         }
 
         .brand {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255,255,255,.98);
+            padding: 6px 11px;
+            border-radius: 12px;
+            box-shadow: 0 8px 22px rgba(0,0,0,.12);
             text-decoration: none;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            font-size: 22px;
+        }
+
+        .brand img {
+            display: block;
+            width: 230px;
+            height: auto;
         }
 
         nav {
@@ -421,7 +430,11 @@
             }
 
             .brand {
-                font-size: 18px;
+                padding: 5px 8px;
+            }
+
+            .brand img {
+                width: 165px;
             }
 
             .hero {
@@ -455,7 +468,9 @@
 <body>
 
 <header>
-    <a class="brand" href="#">Jijoca Residencial</a>
+    <a class="brand" href="#" aria-label="Jijoca Residencial">
+        <img src="images/jijoca-residencial-logo.png" alt="Jijoca Residencial - Kitnets em Jijoca de Jericoacoara">
+    </a>
 
     <nav>
         <a href="#">Início</a>

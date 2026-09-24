@@ -52,9 +52,18 @@
         }
 
         .brand {
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: -.02em;
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255,255,255,.98);
+            padding: 5px 10px;
+            border-radius: 11px;
+            box-shadow: 0 7px 20px rgba(0,0,0,.12);
+        }
+
+        .brand img {
+            display: block;
+            width: 205px;
+            height: auto;
         }
 
         .back-top {
@@ -306,7 +315,8 @@
 
         @media(max-width:700px) {
             header { padding: 16px 18px; }
-            .brand { font-size: 17px; }
+            .brand { padding: 4px 7px; }
+            .brand img { width: 150px; }
             .container { margin: 16px; border-radius: 16px; }
             .main-image { height: 320px; }
             .content { padding: 26px 22px; }
@@ -325,7 +335,9 @@
 <body>
 
 <header>
-    <a class="brand" href="index.html">Jijoca Residencial</a>
+    <a class="brand" href="index.html" aria-label="Jijoca Residencial">
+        <img src="images/jijoca-residencial-logo.png" alt="Jijoca Residencial - Kitnets em Jijoca de Jericoacoara">
+    </a>
     <a class="back-top" href="index.html">Voltar ao início</a>
 </header>
 
