@@ -1253,7 +1253,7 @@ h1 em, h2 em { font-style: italic; font-weight: 400; }
     .hero-content { padding-top: calc(var(--header-h) + 56px); }
     /* Enquadra as kitnets e a Pedra Furada na tela do celular */
     .hero { --art-w: 820px; }
-    .hero-art { transform: translate3d(-55%, var(--parallax, 0px), 0); }
+    .hero-art { transform: translate3d(-58%, var(--parallax, 0px), 0); }
     .hero-actions { flex-direction: column; align-items: stretch; max-width: 340px; margin-inline: auto; }
     .hero-actions .btn { width: 100%; }
 
